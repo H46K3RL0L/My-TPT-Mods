@@ -220,6 +220,8 @@ simulation_elem_ids = [
 	[ 'POOP',   218 ],
 	[ 'INTE',   219 ],
 	[ 'HOT',    220 ],
+	[ 'SPLU',    221 ],
+	[ 'HEAV',    222 ],
 ]
 
 simulation_elem_src = []
