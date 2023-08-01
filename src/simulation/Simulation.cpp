@@ -2408,6 +2408,7 @@ void Simulation::init_can_move()
 		//VOID and PVOD behaviour varies with powered state and ctype
 		can_move[movingType][PT_PVOD] = 3;
 		can_move[movingType][PT_VOID] = 3;
+		can_move[movingType][PT_ILVD] = 3;
 		//nothing moves through EMBR (not sure why, but it's killed when it touches anything)
 		can_move[movingType][PT_EMBR] = 0;
 		can_move[PT_EMBR][movingType] = 0;
@@ -2432,7 +2433,7 @@ void Simulation::init_can_move()
 		 || destinationType == PT_ISOZ || destinationType == PT_ISZS || destinationType == PT_QRTZ || destinationType == PT_PQRT
 		 || destinationType == PT_H2   || destinationType == PT_BGLA || destinationType == PT_C5)
 			can_move[PT_PHOT][destinationType] = 2;
-		if (destinationType != PT_DMND && destinationType != PT_INSL && destinationType != PT_VOID && destinationType != PT_PVOD && destinationType != PT_VIBR && destinationType != PT_BVBR && destinationType != PT_PRTI && destinationType != PT_PRTO)
+		if (destinationType != PT_DMND && destinationType != PT_INSL && destinationType != PT_VOID && destinationType != PT_ILVD && destinationType != PT_PVOD && destinationType != PT_VIBR && destinationType != PT_BVBR && destinationType != PT_PRTI && destinationType != PT_PRTO)
 		{
 			can_move[PT_PROT][destinationType] = 2;
 			can_move[PT_GRVT][destinationType] = 2;
@@ -2532,6 +2533,12 @@ int Simulation::eval_move(int pt, int nx, int ny, unsigned *rr)
 			else result = 0;
 			break;
 		case PT_VOID:
+			if (!parts[ID(r)].ctype || (parts[ID(r)].ctype==pt)!=(parts[ID(r)].tmp&1))
+				result = 1;
+			else
+				result = 0;
+			break;
+			case PT_ILVD:
 			if (!parts[ID(r)].ctype || (parts[ID(r)].ctype==pt)!=(parts[ID(r)].tmp&1))
 				result = 1;
 			else
@@ -2748,6 +2755,7 @@ int Simulation::try_move(int i, int x, int y, int nx, int ny)
 	switch (TYP(r))
 	{
 	case PT_VOID:
+	case PT_ILVD:
 	case PT_PVOD:
 		// this is where void eats particles
 		// void ctype already checked in eval_move

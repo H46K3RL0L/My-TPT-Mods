@@ -11,12 +11,12 @@ void Element::Element_HOT()
 	MenuSection = SC_NUCLEAR;
 	Enabled = 1;
 
-	Advection = 0.4f;
-	AirDrag = 0.01f * CFDS;
-	AirLoss = 0.99f;
-	Loss = 0.95f;
+	Advection = 0.7f;
+	AirDrag = 0.02f * CFDS;
+	AirLoss = 0.96f;
+	Loss = 0.80f;
 	Collision = 0.0f;
-	Gravity = 0.4f;
+	Gravity = 0.1f;
 	Diffusion = 0.00f;
 	HotAir = 0.000f	* CFDS;
 	Falldown = 1;
@@ -27,7 +27,7 @@ void Element::Element_HOT()
 	Hardness = 0;
 	PhotonReflectWavelengths = 0x003FC000;
 
-	Weight = 100;
+	Weight = 50;
 
 	DefaultProperties.temp = R_TEMP + 30.0f + 273.15f;
 	HeatConduct = 255;
@@ -49,6 +49,6 @@ void Element::Element_HOT()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-			parts[i].temp += 1000.0f;
+			parts[i].temp *= 1000.0f;
 	return 0;
 }

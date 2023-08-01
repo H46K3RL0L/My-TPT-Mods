@@ -678,7 +678,7 @@ void Element_STKM_interact(Simulation *sim, playerst *playerp, int i, int x, int
 			}
 			sim->kill_part(i);
 		}
-		if ((TYP(r)==PT_VOID || (TYP(r)==PT_PVOD && sim->parts[ID(r)].life==10)) && (!sim->parts[ID(r)].ctype || (sim->parts[ID(r)].ctype==sim->parts[i].type)!=(sim->parts[ID(r)].tmp&1)) && sim->parts[i].type)
+		if ((TYP(r)==PT_VOID || TYP(r)==PT_ILVD || (TYP(r)==PT_PVOD && sim->parts[ID(r)].life==10)) && (!sim->parts[ID(r)].ctype || (sim->parts[ID(r)].ctype==sim->parts[i].type)!=(sim->parts[ID(r)].tmp&1)) && sim->parts[i].type)
 		{
 			sim->kill_part(i);
 		}
