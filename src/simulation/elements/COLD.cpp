@@ -2,11 +2,11 @@
 
 static int update(UPDATE_FUNC_ARGS);
 
-void Element::Element_HOT()
+void Element::Element_COLD()
 {
-	Identifier = "DEFAULT_PT_HOT";
-	Name = "HOT";
-	Colour = PIXPACK(0x990000);
+	Identifier = "DEFAULT_PT_COLD";
+	Name = "COLD";
+	Colour = PIXPACK(0x02c9d4);
 	MenuVisible = 1;
 	MenuSection = SC_SPECIAL;
 	Enabled = 1;
@@ -49,6 +49,6 @@ void Element::Element_HOT()
 
 static int update(UPDATE_FUNC_ARGS)
 {
-			parts[i].temp *= 1000.0f;
+			parts[i].temp /= 1000.0f;
 	return 0;
 }
