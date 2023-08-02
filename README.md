@@ -124,3 +124,5 @@ Command Line
 | `redirect`            | Redirects output to stdout.txt / stderr.txt      |                                             |
 | `cafile:CAFILE`       | Set certificate bundle path                      | `cafile:/etc/ssl/certs/ca-certificates.crt` |
 | `capath:CAPATH`       | Set certificate directory path                   | `capath:/etc/ssl/certs`                     |
+
+Also, this mod repository is mildly broken. Github was being stupid and I had to delete it multiple times. If you saw my message in valour "Github hates me", its cause of that.
