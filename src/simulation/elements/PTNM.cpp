@@ -219,7 +219,7 @@ static int update(UPDATE_FUNC_ARGS)
 					case PT_GAS: // GAS + > 2 pressure + >= 200 C -> INSL
 						if (parts[ID(r)].temp >= 200.0f + 273.15f && sim->pv[(y + ry) / CELL][(x + rx) / CELL] > 2.0f)
 						{
-							sim->part_change_type(ID(r), x + rx, y + ry, PT_INSL);
+							sim->part_change_type(ID(r), x + rx, y + ry, PT_INSL || PT_ILVD);
 							parts[i].temp += 60.0f; // Other part is INSL, adding temp is useless
 						}
 						break;

@@ -137,6 +137,8 @@ std::vector<unsigned int> LoadLatent()
 		/* BRMT */ 0,
 		/* PHOT */ 0,
 		/* URAN */ 0,
+		/* ILVD */ 0,
+		/* LIGT */ 0,
 		/* HEAV */ 0,
 		/* WAX  */ 0,
 		/* MWAX */ 0,

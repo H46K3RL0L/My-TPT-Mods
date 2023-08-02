@@ -61,7 +61,7 @@ static int update(UPDATE_FUNC_ARGS)
 			if (BOUNDS_CHECK && (rx || ry))
 			{
 				r = pmap[y+ry][x+rx];
-				if (!r || sim->parts_avg(ID(r), i,PT_INSL)==PT_INSL)
+				if (!r || sim->parts_avg(ID(r), i,PT_INSL || PT_ILVD)==PT_INSL || PT_ILVD)
 					continue;
 				if (TYP(r)==PT_SPRK && parts[i].life==0 && parts[ID(r)].life>0 && parts[ID(r)].life<4 && parts[ID(r)].ctype==PT_PSCN)
 				{
