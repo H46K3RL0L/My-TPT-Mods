@@ -1,0 +1,14 @@
+Version 1.0.0
+
+Added digestive system and new biology helper methods.
+
+Added
+- STOM
+- SACID
+- INTE
+- GLUC
+- SVLV
+- MUCO
+- DIGE
+
+... and probably more.
