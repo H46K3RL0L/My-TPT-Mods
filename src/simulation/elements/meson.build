@@ -224,7 +224,7 @@ simulation_elem_ids = [
 	[ 'HEAV',    222 ],
 	[ 'LIGT',    223 ],
 	[ 'ILVD',    224 ],
-	[ 'COLD',    32 ],
+	[ 'COLD',    225 ],
 ]
 
 simulation_elem_src = []

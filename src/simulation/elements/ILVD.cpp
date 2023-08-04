@@ -27,7 +27,7 @@ void Element::Element_ILVD()
 	Weight = 100;
 
 	HeatConduct = 0;
-	Description = "Insulated void, acts like void but does not conduct heat or electricity.";
+	Description = "Insulated void, acts like void but does not conduct heat. (Attempting to make it also not conduct electricity breaks SPRK entirely).";
 
 	Properties = TYPE_SOLID;
 
