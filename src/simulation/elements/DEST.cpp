@@ -74,7 +74,7 @@ static int update(UPDATE_FUNC_ARGS)
 			parts[i].life-=4;
 		}
 	}
-	else if (rt == PT_INSL  || PT_ILVD)
+	else if (rt == PT_INSL)
 	{
 		sim->create_part(ID(r), x+rx, y+ry, PT_PLSM);
 	}

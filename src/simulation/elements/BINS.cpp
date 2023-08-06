@@ -1,12 +1,12 @@
 #include "simulation/ElementCommon.h"
 
-void Element::Element_ILVD()
+void Element::Element_BINS()
 {
-	Identifier = "DEFAULT_PT_ILVD";
-	Name = "ILVD";
-	Colour = PIXPACK(0x701e1b);
+	Identifier = "DEFAULT_PT_BINS";
+	Name = "BINS";
+	Colour = PIXPACK(0x858bff);
 	MenuVisible = 1;
-	MenuSection = SC_SPECIAL;
+	MenuSection = SC_ELEC;
 	Enabled = 1;
 
 	Advection = 0.0f;
@@ -27,7 +27,7 @@ void Element::Element_ILVD()
 	Weight = 100;
 
 	HeatConduct = 0;
-	Description = "Insulated void, acts like void but does not conduct heat.).";
+	Description = "Better Insulator, does not conduct heat and blocks electricity. Is not flammable like regular INSL.";
 
 	Properties = TYPE_SOLID;
 

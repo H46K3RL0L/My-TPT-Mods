@@ -2202,7 +2202,7 @@ void Simulation::set_emap(int x, int y)
 
 int Simulation::parts_avg(int ci, int ni,int t)
 {
-	if (t==PT_INSL || t==PT_ILVD)//to keep electronics working
+	if (t==PT_INSL)//to keep electronics working
 	{
 		int pmr = pmap[((int)(parts[ci].y+0.5f) + (int)(parts[ni].y+0.5f))/2][((int)(parts[ci].x+0.5f) + (int)(parts[ni].x+0.5f))/2];
 		if (pmr)
@@ -2533,12 +2533,6 @@ int Simulation::eval_move(int pt, int nx, int ny, unsigned *rr)
 			else result = 0;
 			break;
 		case PT_VOID:
-			if (!parts[ID(r)].ctype || (parts[ID(r)].ctype==pt)!=(parts[ID(r)].tmp&1))
-				result = 1;
-			else
-				result = 0;
-			break;
-			case PT_ILVD:
 			if (!parts[ID(r)].ctype || (parts[ID(r)].ctype==pt)!=(parts[ID(r)].tmp&1))
 				result = 1;
 			else

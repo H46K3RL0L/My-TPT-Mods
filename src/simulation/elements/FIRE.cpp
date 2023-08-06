@@ -261,8 +261,8 @@ int Element_FIRE_update(UPDATE_FUNC_ARGS)
 				if ((surround_space || sim->elements[rt].Explosive) &&
 				    sim->elements[rt].Flammable && RNG::Ref().chance(int(sim->elements[rt].Flammable + (sim->pv[(y+ry)/CELL][(x+rx)/CELL] * 10.0f)), 1000) &&
 				    //exceptions, t is the thing causing the spark and rt is what's burning
-				    (t != PT_SPRK || (rt != PT_RBDM && rt != PT_LRBD && rt != PT_INSL || PT_ILVD)) &&
-				    (t != PT_PHOT || rt != PT_INSL || PT_ILVD) &&
+				    (t != PT_SPRK || (rt != PT_RBDM && rt != PT_LRBD && rt != PT_INSL || PT_ILVD || PT_BINS)) &&
+				    (t != PT_PHOT || rt != PT_INSL || PT_ILVD || PT_BINS) &&
 				    (rt != PT_SPNG || parts[ID(r)].life == 0))
 				{
 					sim->part_change_type(ID(r), x+rx, y+ry, PT_FIRE);

@@ -64,7 +64,7 @@ static int update(UPDATE_FUNC_ARGS)
 				r = pmap[y+ry][x+rx];
 				if (!r)
 					continue;
-				if (sim->parts_avg(i,ID(r),PT_INSL || PT_ILVD)!=PT_INSL || PT_ILVD) {
+				if (sim->parts_avg(i,ID(r),PT_INSL)!=PT_INSL) {
 					rt = TYP(r);
 					if (rt==PT_SWCH)
 					{

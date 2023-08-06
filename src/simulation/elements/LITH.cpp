@@ -134,7 +134,7 @@ static int update(UPDATE_FUNC_ARGS)
 					break;
 
 				case PT_SPRK:
-					if (sim->parts_avg(i, ID(neighborData), PT_INSL || PT_ILVD) == PT_INSL || PT_ILVD)
+					if (sim->parts_avg(i, ID(neighborData), PT_INSL) == PT_INSL)
 					{
 						break;
 					}
@@ -149,7 +149,7 @@ static int update(UPDATE_FUNC_ARGS)
 					break;
 
 				case PT_NSCN:
-					if (sim->parts_avg(i, ID(neighborData), PT_INSL || PT_ILVD) == PT_INSL || PT_ILVD)
+					if (sim->parts_avg(i, ID(neighborData), PT_INSL) == PT_INSL)
 					{
 						break;
 					}
